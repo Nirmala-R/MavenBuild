@@ -21,7 +21,7 @@ pipeline {
 	
 	stage ('Deployment'){
 		steps{
-		sh 'cp target/*.war /usr/local/tomcat9/webapps'
+		sh 'cp /var/lib/jenkins/workspace/tomcatserverjob/target/*.war /usr/local/tomcat9/webapps'
 	}
 	}
 	//stage ('Notification'){
