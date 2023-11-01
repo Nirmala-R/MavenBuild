@@ -1,8 +1,6 @@
 pipeline {
   agent any
-	stage ('checkout code'){
-		checkout scm
-	}
+	stages {
 	
 	stage ('Build'){
 		sh "mvn clean install -Dmaven.test.skip=true"
@@ -32,3 +30,6 @@ pipeline {
 		    )
 	}
 }
+}
+
+	
