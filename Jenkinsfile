@@ -20,16 +20,18 @@ pipeline {
 	}
 	
 	stage ('Deployment'){
+		steps{
 		sh 'cp target/*.war /usr/local/tomcat9/webapps'
 	}
-	stage ('Notification'){
-		//slackSend color: 'good', message: 'Deployment Sucessful'
-		emailext (
-		      subject: "Job Completed",
-		      body: "Jenkins Pipeline Job for Maven Build got completed !!!",
-		      to: "nimi.saravanan@gmail.com"
-		    )
 	}
+	//stage ('Notification'){
+		//slackSend color: 'good', message: 'Deployment Sucessful'
+		//emailext (
+		      //subject: "Job Completed",
+		      //body: "Jenkins Pipeline Job for Maven Build got completed !!!",
+		      //to: "nimi.saravanan@gmail.com"
+		    //)
+	//}
 }
 }
 
